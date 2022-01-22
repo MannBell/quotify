@@ -1,0 +1,61 @@
+body { background: var(--bs-secondary) }
+
+.container.container-small { max-width: 700px }
+
+.initials-circle {
+  --size: 2em;
+  width: var(--size);
+  height: var(--size);
+}
+
+.nav-margin {
+  margin-top: 4rem;
+}
+
+.my-star {
+  cursor: pointer;
+  padding: initial;
+  margin: initial;
+  border: initial;
+  background: initial;
+}
+
+.my-star:hover {
+  color: var(--bs-warning) !important;
+}
+
+/* MODAL BELOW("my-modal" instead of "modal" to differentiate from bootstrap) */
+.my-modal-wrapper {
+  z-index: 1031; /* to be atop bs-navbar which has z-index: 1030; */
+  display: none;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-color: #0003;
+  justify-content: center;
+  align-items: center;
+}
+
+.my-modal-wrapper.active {
+  display: flex;
+}
+
+@keyframes fadeLoading {
+  0%{
+    background-color: var(--bs-dark);
+  }
+  50%{
+    background-color: var(--bs-secondary);
+  }
+  100%{
+    background-color: var(--bs-dark);
+  }
+}
+
+.loading-page {
+  height: 100vh;
+  background-image: url("../public/feather-alt.svg");
+  background-position: center;
+  background-size: 25%;
+  background-repeat: no-repeat;
+  animation: fadeLoading 5s ease-in-out infinite;
+}
